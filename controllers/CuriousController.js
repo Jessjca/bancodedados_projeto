@@ -1,8 +1,10 @@
-const Curious = require('../models/Curious')
-const User = require('../models/User')
+const path = require('path');
+const Curious = require('../models/Curious');
+const User = require('../models/User');
 
 module.exports = class CuriousController {
     static async showCurious(req, res) {
-        res.render('curious/home')
+        const viewPath = path.join('curious', 'home');
+        res.render(viewPath);
     }
 }
