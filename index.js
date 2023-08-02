@@ -1,82 +1,80 @@
-const express = require('express');
-const exphbs = require('express-handlebars');
-const session = require('express-session');
-const FileStore = require('session-file-store')(session);
-const flash = require('express-flash');
-const path = require('path');
+const express = require("express");
+const exphbs = require("express-handlebars");
+const session = require("express-session");
+const FileStore = require("session-file-store")(session);
+const flash = require("express-flash");
 
 const app = express();
-const conn = require('./db/conn');
 
-//models
-const Curious = require('./models/Curious');
-const User = require('./models/User');
+const conn = require("./db/conn");
 
-//import routes
-const CuriousRoutes = require('./routes/CuriousRoutes');
-const authRoutes = require('./routes/authRoutes');
-//import controller
-const CuriousController = require('./controllers/CuriousController');
+// Models
+const Tought = require("./models/Tought");
 
-// Set the views directory
-app.set('views', path.join(__dirname, 'views'));
+// routes
+const toughtsRoutes = require("./routes/toughtsRoutes");
+const authRoutes = require("./routes/authRoutes");
+const ToughController = require("./controllers/ToughtController");
 
-// Create an instance of the handlebars engine and configure it
-const hbs = exphbs.create({
-  defaultLayout: 'main', // Define o layout padrão como 'main.handlebars'
-  layoutsDir: path.join(__dirname, 'views/layouts'), // Pasta de layouts
-  partialsDir: path.join(__dirname, 'views/partials'), // Pasta de partials (se houver)
+// Helper personalizado regexMatch
+const handlebars = require("handlebars");
+handlebars.registerHelper("regexMatch", function (str, pattern, options) {
+  const regex = new RegExp(pattern);
+  return regex.test(str) ? options.fn(this) : options.inverse(this);
 });
 
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
+app.engine("handlebars", exphbs.engine());
+app.set("view engine", "handlebars");
 
 app.use(
   express.urlencoded({
-    extended: true
-  }),
+    extended: true,
+  })
 );
 
 app.use(express.json());
 
+//session middleware
 app.use(
   session({
-    name: "session",
-    secret: "nosso_secret",
+    name: 'session',
+    secret: 'nosso_secret',
     resave: false,
     saveUninitialized: false,
     store: new FileStore({
-      logFn: function () { },
+      logFn: function () {},
       path: require('path').join(require('os').tmpdir(), 'sessions'),
     }),
     cookie: {
       secure: false,
-      maxAge: 360000,
-      expires: new Date(Date.now() + 360000),
-      httpOnly: true
-    }
+      maxAge: 3600000,
+      expires: new Date(Date.now() + 3600000),
+      httpOnly: true,
+    },
   }),
-);
+)
 
-//flash messages
+// flash messages
 app.use(flash());
 
-//public path
-app.use(express.static('public'));
+app.use(express.static("public"));
 
-//routes for login and register
-app.use('/', authRoutes);
-app.use('/curious', CuriousRoutes);
-
+// set session to res
 app.use((req, res, next) => {
+  // console.log(req.session)
+  console.log(req.session.userid);
+
   if (req.session.userid) {
     res.locals.session = req.session;
   }
+
   next();
 });
 
-//route for the home page
-app.get('/', CuriousController.showCurious);
+app.use("/toughts", toughtsRoutes);
+app.use("/", authRoutes);
+
+app.get("/", ToughController.showToughts);
 
 conn
   //.sync({force: true})

@@ -2,35 +2,38 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="" IE=edge>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curious</title>
-    <link rel="shortcut icon" href="/img/curious_logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="/css/styles.css">
-    <!--Bootstrap icons-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Curious</title>
+  <link rel="shortcut icon" href="/img/curious_logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="/css/styles.css">
+  <!-- BOOTSTRAP ICONS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 </head>
 
 <body>
-    <div class="center-container">
-        <div id="logo">
-            <img src="/img/curious_logo.png" alt="Logo">
-        </div>
-        <!-- Adicione o ID "btn-register" ao botão de registrar -->
-        <button id="btn-register" class="btno btn-register">Registrar</button>
-        <!-- Adicione o ID "btn-login" ao botão de login -->
-        <button id="btn-login" class="btno btn-login">Login</button>
+  <nav id="navbar">
+    <a href="/" id="logo">
+      <img src="/img/curious_logo.png" alt="Toughts">
+    </a>
+  </nav>
+  <div class="container">
+    {{#if messages.message}}
+    <div class="message">
+      {{messages.message}}
     </div>
-
-    <div class="container">
-        {{{ body }}}
+    {{/if}}
+    {{#if message}}
+    <div class="message">
+      {{message}}
     </div>
-    <footer>
-        <p><span>Curious</span> &copy; 2023</p>
-    </footer>
-    <!-- Importe o script no final do body para garantir que o HTML seja carregado antes de executar o JavaScript -->
-    <script src="/js/script.js"></script>
+    {{/if}}
+    {{{ body }}}
+  </div>
+  <footer>
+    <p><span>Curious</span> &copy; 2023</p>
+  </footer>
 </body>
 
 </html>

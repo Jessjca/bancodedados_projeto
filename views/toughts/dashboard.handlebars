@@ -1,0 +1,12 @@
+{{#if session.userid}}
+<div class="dashboard">
+    <div class="title-container">
+        <a href="/toughts/add" class="btno">Criar Pensamento</a>
+        <a href="/toughts/curious" class="btno">Meus Pensamentos</a>
+    </div>
+    <div class="center-container">
+        <!-- Adicione o ID "btn-login" ao botão de login -->
+        <a id="btn-login" class="btno" href="/logout">Sair</a>
+    </div>
+    {{/if}}
+</div>

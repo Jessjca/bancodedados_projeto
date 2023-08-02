@@ -6,10 +6,33 @@
   color: #fff;
 }
 
-html, body {
-  height: 100%;
+#logo {
+  height: 100px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
+/* CONTAINER */
+.message {
+  padding: 1em;
+  color: #020202;
+  background-color: #ffcced;
+  border: 1px soli d#ffcced;
+  border-radius: 5px;
+  text-align: center;
+  margin: 0 auto 2em;
+  max-width: 20%;
+}
+
+.container {
+  min-height: 60vh;
+  padding: 2em;
+}
+
+/* CENTER-CONTAINER */
 .center-container {
   position: relative;
   display: flex;
@@ -19,16 +42,7 @@ html, body {
   height: calc(100% - 150px); /* Altura total menos a altura do rodapé */
 }
 
-#logo {
-  height: 90px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.btno {
+.btn-link {
   padding: 15px 0; /* Ajuste o padding conforme desejado */
   width: 500px; /* Ajuste a largura conforme desejado */
   margin: 10px;
@@ -38,9 +52,12 @@ html, body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  text-align: center;
+  display: block; /* Garante que o link ocupe toda a largura disponível */
+  text-decoration: none; /* Remove sublinhado padrão dos links */
 }
 
-.btno:hover {
+.btn-link:hover {
   background-color: #d01754;
 }
 
@@ -50,9 +67,6 @@ html, body {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centraliza horizontalmente */
-  align-items: center; /* Centraliza verticalmente */
-  height: 100vh; /* Ocupa a altura total da viewport para centralização vertical */
 }
 
 .auth-container h2 {
@@ -62,7 +76,7 @@ html, body {
 }
 
 .auth-container a {
-  color: #f62d77;
+  color: #d01754;
 }
 
 .form-control {
@@ -79,15 +93,16 @@ html, body {
 .form-control input,
 .form-control textarea {
   padding: 7px;
+  margin-bottom: 0.5em;
   border-radius: 3px;
-  border: 1px solid #f62d77;
+  border: 1px solid #d01754;
 }
 
-form input[type='submit'],
+form input[type='submito'],
 .btn {
   background-color: transparent;
-  color: #f62d77;
-  border: 2px solid #f62d77;
+  color: #d01754;
+  border: 2px solid #d01754;
   padding: 0.5em 1.3em;
   margin-bottom: 1em;
   font-size: 1em;
@@ -98,30 +113,98 @@ form input[type='submit'],
   transition: 0.5s;
 }
 
-form input[type='submit']:hover,
+form input[type='submito']:hover,
 .btn:hover {
-  background-color: #f62d77;
+  background-color: #d01754;
   color: #fff;
 }
 
-/* DASHBOARD */
-.title-container {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1.5em;
+form input[type='submit'],
+.btn {
+  padding: 15px 0; /* Ajuste o padding conforme desejado */
+  width: 200px; /* Ajuste a largura conforme desejado */
+  font-size: 16px;
+  background-color: #f62d77;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  display: block; /* Garante que o link ocupe toda a largura disponível */
+  text-decoration: none; /* Remove sublinhado padrão dos links */
 }
 
-.title-container h2 {
-  border-left: 4px solid #f62d77;
-  padding: 10px;
+form input[type='submit']:hover,
+.btn:hover {
+  background-color: #d01754;
+}
+
+/* DASHBOARD */
+
+.btno {
+  padding: 15px 0; /* Ajuste o padding conforme desejado */
+  width: 200px; /* Ajuste a largura conforme desejado */
+  margin: 10px;
+  font-size: 16px;
+  background-color: #f62d77;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  display: block; /* Garante que o link ocupe toda a largura disponível */
+  text-decoration: none; /* Remove sublinhado padrão dos links */
+}
+
+.btno:hover {
+  background-color: #d01754;
+}
+
+.btnos {
+  padding: 15px 0; /* Ajuste o padding conforme desejado */
+  width: 80px; /* Ajuste a largura conforme desejado */
+  margin: 5px;
+  font-size: 16px;
+  background-color: #f62d77;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  display: block; /* Garante que o link ocupe toda a largura disponível */
+  text-decoration: none; /* Remove sublinhado padrão dos links */
+}
+
+.btnos:hover {
+  background-color: #d01754;
+}
+
+.title-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100% - 150px); /* Altura total menos a altura do rodapé */
+}
+
+.aa {
+  color: #f62d77;
+  text-decoration: none; /* Remove sublinhado padrão dos links */
+
 }
 
 .dashboard h3 {
-  margin-bottom: 1.5em;
+  margin-top: 1em;
+  font-size: 32px;
 }
 
 .dashboard ul {
   list-style: none;
+  max-width: 950px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .dashboard li {
@@ -134,8 +217,13 @@ form input[type='submit']:hover,
 
 .dashboard .label {
   font-weight: bold;
-  color: #f62d77;
-  margin-right: 2em;
+  color: #fff;
+  margin-right: 5em;
+}
+
+.dashboard .link {
+  color: #fff;
+  margin-left: 5em;
 }
 
 .dashboard .actions {
@@ -149,8 +237,17 @@ form input[type='submit']:hover,
 }
 
 /* CREATE / EDIT FORM */
+.tought-form-container {
+  max-width: 450px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
 .tought-form-container a {
   color: #f62d77;
+  text-decoration: none; /* Remove sublinhado padrão dos links */
+  
 }
 
 .tought-form-container a:hover {
@@ -158,14 +255,107 @@ form input[type='submit']:hover,
 }
 
 .tought-form-container h1 {
-  border-left: 4px solid #f62d77;
-  padding: 10px;
   margin-top: 1em;
 }
 
 .tought-form-container form {
-  max-width: 30%;
+  max-width: 90%;
   margin-top: 1.5em;
+}
+
+/* HOME */
+.home-header {
+  display: flex;
+  flex-direction: column;
+  max-width: 60%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.home-header h1 {
+  margin-bottom: 1em;
+}
+
+.home-header span {
+  color: #f6982d;
+}
+
+.home-header p {
+  margin-bottom: 1.2em;
+}
+
+.home-header form {
+  margin-bottom: 1em;
+}
+
+.home-header input {
+  border: none;
+  border-bottom: 1px solid #fff;
+  padding: 0.5em;
+  margin-right: 1em;
+}
+
+.home-header input[type='text'] {
+  width: 60%;
+}
+
+.home-header input::placeholder {
+  color: #fff;
+}
+
+.order-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 80%;
+  margin: 0 auto 1em;
+}
+
+.order-container span {
+  font-weight: bold;
+  color: #fff;
+}
+
+.order-container form {
+  margin: 0;
+}
+
+.order-container button {
+  margin-bottom: 0;
+  border: none;
+  cursor: pointer;
+}
+
+.order-container button:hover,
+.order-container a:hover {
+  color: #f6982d;
+}
+
+.order-container span,
+.order-container button,
+.order-container a {
+  margin: 0 10px;
+}
+
+.order-container i {
+  color: #f6982d;
+}
+
+.toughts-container figure {
+  border-bottom: 1px solid #333;
+  padding: 0.5em;
+  max-width: 50%;
+  margin: 0 auto 1em;
+}
+
+.toughts-container blockquote {
+  font-style: italic;
+  font-size: 2em;
+  margin-bottom: 0.4em;
+}
+
+.toughts-container span {
+  color: #f6982d;
 }
 
 /* FOOTER */
