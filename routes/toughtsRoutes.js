@@ -12,6 +12,6 @@ router.get("/edit/:id", checkAuth, ToughtController.updateTought);
 router.post("/edit", checkAuth, ToughtController.updateToughtPost);
 router.get("/dashboard", checkAuth, ToughtController.dashboard);
 router.get("/curious", checkAuth, ToughtController.curious);
-router.get("/home", ToughtController.showToughts);
+router.get("/", ToughtController.showToughts);
 
 module.exports = router;
