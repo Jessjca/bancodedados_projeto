@@ -40,7 +40,7 @@ Certifique-se de ter o express instalado com:
 npm install express
 ```
 
-E então, crie o banco de dados `curious` e `users` com:
+E então, crie o banco de dados `curious` com:
 
 ```
 CREATE TABLE IF NOT EXISTS Users (
