@@ -62,8 +62,8 @@ CREATE TABLE IF NOT EXISTS Curious (
   description VARCHAR(255) NOT NULL,
   servings INT NOT NULL,
   time_taken VARCHAR(255) NOT NULL,
-  UserId INT UNSIGNED NOT NULL,
   content TEXT NOT NULL,
+  UserId INT UNSIGNED NOT NULL,
   FOREIGN KEY (UserId) REFERENCES Users(id)
 );
 ```
