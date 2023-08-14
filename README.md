@@ -80,7 +80,7 @@ Há também o Controller `AuthController`, responsável por gerenciar as intera�
 
 ## Middleware
 
-Esse trecho de código, configura o middleware de sessão para o aplicativo utilizando o pacote express-session. Ele é responsável por gerenciar e manter o estado das sessões dos usuários enquanto interagem com o aplicativo, garantindo que os dados da sessão do usuário sejam mantidos de forma segura e eficiente, permitindo a autenticação e personalização das interações do usuário com o projeto.
+Esse trecho de código, configura o middleware de sessão para o aplicativo utilizando o pacote express-session. Ele é responsável por gerenciar e manter o estado das sessões dos usuários enquanto interagem com o aplicativo, garantindo que os dados da sessão do usuário sejam mantidos de forma segura e eficiente, permitindo a autenticação e personalização das interações do usuário com o projeto.  O `express-mysql-server` tabela chamada `session` automaticamente no banco de dados assim que a primeira inicialização do projeto é feita, essa tabela não é mostrada no diagrama ER por conta de existir apenas por questões de autentificação do usuário.
 
 ```
 const sessionStore = new MySQLStore({
