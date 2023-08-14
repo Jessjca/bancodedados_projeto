@@ -1,5 +1,5 @@
 {
-  "name": "11_TOUGHTS",
+  "name": "Curious",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,7 +8,7 @@
     "start": "nodemon ./index.js localhost 3000"
   },
   "keywords": [],
-  "author": "Matheus <matheus@horadecodar.com.br> (http://www.horadecodar.com.br/)",
+  "author": "Jessica Costa",
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
