@@ -1,0 +1,82 @@
+<div class="container-fluid home-container">
+    <div class="row" id="home-background">
+        <form action="/" method="GET">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-12 p-5">
+                        {{#if search}}
+                        <h2 class="bold">Você está buscando por: <span>{{search}}</span></h2>
+                        {{#if curiousQty }}
+                        <p>Todos resultados para <span>{{search}}</span>:</p>
+                        {{else}}
+                        <p>Nenhuma receita encontrada para o termo <span>{{search}}</span></p>
+                        {{/if}}
+                        {{else}}
+                        {{/if}}
+                    </div>
+                    <div class="col-12">
+                        <div class="input-group w-50 mx-auto mt-5">
+                            <input type="text" name="search" class="form-control" type="search"
+                                placeholder="Está buscando por algo?" aria-label="Search" id="search">
+                            <button class="btn btn-light" type="submit">
+                                <i class="fas fa-search" style="color: #F2AE2E;"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="col-12">
+            <div class="container">
+                <div class="row">
+                    {{#each curious}}
+                    <div class="col-lg-3 d-flex justify-content-center mt-5">
+                        <a href="/curious/post/{{this.id}}">
+                            <div class="card zoom-div" style="width: 18rem;">
+                                <img src="/img/receitas/{{this.image}}" class="card-img-top" alt="card-img">
+                                <div class="card-body" id="card-body-bg">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <a href="/curious/post/{{this.id}}"></a>
+                                            <h5 class="card-title">{{this.title}}</h5>
+                                            <p class="card-text">{{this.description}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer-1 pb-4">
+                                    <div class="col-12  pt-5 text-center">
+                                        <i class="fa-solid fa-bell-concierge"></i><span
+                                            class="ms-2">{{this.servings}}</span>
+                                        <i class="fa-solid fa-clock ms-4"></i><span
+                                            class="ms-2">{{this.time_taken}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    function limitarCaracteres(className, limite) {
+        const elementos = document.getElementsByClassName(className);
+
+        for (const elemento of elementos) {
+            const textoCompleto = elemento.textContent;
+            if (textoCompleto.length > limite) {
+                const textoLimitado = textoCompleto.slice(0, limite) + "...";
+                elemento.textContent = textoLimitado;
+            }
+        }
+    }
+
+    // Chamando a função para limitar o texto do elemento com a classe "card-text" a 50 caracteres
+    limitarCaracteres("card-text", 95);
+
+
+
+</script>

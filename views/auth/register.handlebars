@@ -1,23 +1,32 @@
-<div class="auth-container">
+<div class="container-fluid create-container">
+    <div class="row" id="home-background">
+        <div class="container create d-flex justify-content-center">
+
+            <div class="d-block" style="width: 50vh">
+                <div class="row">
+                    <div class="col-12 p-5 d-flex justify-content-center">
+                    </div>
+                </div>
     <h2>Registrar</h2>
     <form action="/register" method="POST">
-        <div class="form-control">
+        <div class="">
             <label for="text">Nome:</label>
-            <input type="name" name="name" placeholder="Digite o seu nome" required>
+            <input type="name" name="name" placeholder="Digite o seu nome" required class="form-control" id="input">
         </div>
-        <div class="form-control">
+        <div class="">
             <label for="email">E-mail:</label>
-            <input type="email" name="email" placeholder="Digite o seu e-mail" required>
+            <input type="email" name="email" placeholder="Digite o seu e-mail" required class="form-control" id="input">
         </div>
-            <div class="form-control">
+            <div class="">
             <label for="password">Senha:</label>
-            <input type="password" name="password" placeholder="Digite a sua senha" required>
+            <input type="password" name="password" placeholder="Digite a sua senha" required class="form-control" id="input">
         </div>
-        <div class="form-control">
+        <div class="">
             <label for="confirmpassword">Confirmação de senha:</label>
-            <input type="password" name="confirmpassword" placeholder="Confirme a sua senha" required>
+            <input type="password" name="confirmpassword" placeholder="Confirme a sua senha" required class="form-control" id="input">
         </div>
-        <input type="submit" value="Cadastrar">
-        <p>Já tem conta? <a href="/login">Clique aqui</a></p>
+        <input id="btn-default" class="btn mt-3 btn-primary create-zoom-div" type="submit" value="Cadastrar">
+        <p>Já tem conta? <a href="/login" class="pink-link">Clique aqui</a></p>
     </form>
+</div>
 </div>

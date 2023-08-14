@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,36 +5,70 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Curious</title>
-  <link rel="shortcut icon" href="/img/curious_logo.png" type="image/x-icon">
-  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon" />
+  <link rel="stylesheet" href="/css/styles.css" />
   <!-- BOOTSTRAP ICONS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
 </head>
 
 <body>
-  {{#unless session.userid}}
-  <nav id="navbar">
-    <a href="/" id="logo">
-      <img src="/img/curious_logo.png" alt="Toughts">
-    </a>
-  </nav>
-  {{/unless}}
-  <div class="container">
-    {{#if messages.message}}
-    <div class="message">
-      {{messages.message}}
+
+  <header>
+    <ul class="nav justify-content-center align-items-center" id="navbar">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+      {{#if session.userid}}
+      <li class="nav-item">
+        <a class="nav-link" href="/curious/dashboard">Perfil</a>
+      </li>
+
+      <li class="nav-item me-4">
+        <a class="nav-link" href="/logout">Sair</a>
+      </li>
+      {{else}}
+      <li class="nav-item">
+        <a class="nav-link" href="/login">Entrar</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/register">Registrar</a>
+      </li>
+      {{/if}}
+
+    </ul>
+    <div class="row">
+      <div class="col d-flex justify-content-center m-4">
+        <a href="/">
+        <img class="img-fluid" src="/img/logo.gif" alt="logo" width="200px">
+        </a>
+      </div>
     </div>
-    {{/if}}
-    {{#if message}}
-    <div class="message">
-      {{message}}
+  </header>
+
+  <main>
+      {{#if messages.message}}
+      <div class="message">
+        {{messages.message}}
+      </div>
+      {{/if}}
+      {{#if message}}
+      <div class="message">
+        {{message}}
+      </div>
+      {{/if}}
+      {{{body}}}
     </div>
-    {{/if}}
-    {{{ body }}}
-  </div>
+  </main>
+
   <footer>
-    <p><span>Curious</span> &copy; 2023</p>
+    <div class="d-flex justify-content-center">
+      <p><span>Panquecas Fodas</span> &copy; 2023</p>
+    </div>
   </footer>
+
 </body>
+<script src="https://kit.fontawesome.com/e4264bec92.js" crossorigin="anonymous"></script>
 
 </html>

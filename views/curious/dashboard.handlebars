@@ -1,0 +1,93 @@
+<div class="container-fluid home-container">
+  <div class="row" id="dashboard-background">
+    <div class="col-12 mt-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-6">
+            <div class="row post-header">
+              <div class="col-12">
+                <a href="/">
+                  <p><i class="fa-solid fa-arrow-left"></i><span class="ms-2">Voltar</span></p>
+                </a>
+              </div>
+              <div class="col-12">
+                <strong>
+                  <h2 class="bold">Suas receitas</h2>
+                </strong>
+                <p>Veja as receitas que você adicionou!<br>Em seu dashboard você tem a possibilidade de editar ou excluir uma receita enviada por você.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 d-flex justify-content-end">
+            <a href="/curious/add"><button type="button" class="btn" id="btn-form">Adicionar Nova Receita</button></a>
+          </div>
+        </div>
+        <div class="row">
+          {{#each curious}}
+          <div class="col-lg-3 d-flex justify-content-center mt-5">
+            <a href="/curious/post/{{this.id}}">
+              <div class="card zoom-div" style="width: 18rem;">
+                <img src="/img/receitas/{{this.image}}" class="card-img-top" alt="card-img">
+                <div class="card-body" id="card-body-bg">
+                  <div class="row">
+                    <div class="col-12">
+                      <a href="/curious/post/{{this.id}}"></a>
+                      <h5 class="card-title">{{this.title}}</h5>
+                      <p class="card-text">{{this.description}}</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer card-footer-1 pb-4">
+                  <div class="col-12 mt-3 text-center">
+                    <i class="fa-solid fa-bell-concierge"></i><span class="ms-2">{{this.servings}}</span>
+                    <i class="fa-solid fa-clock ms-4"></i><span class="ms-2">{{this.time_taken}}</span>
+                  </div>
+                </div>
+                <div class="card-footer card-footer-2">
+                  <div class="actions pb-2 pt-2">
+                    <form action="/curious/remove" method="POST">
+                      <input type="hidden" name="id" value="{{this.id}}">
+                      <div class="row">
+                        <div class="col-6 d-grid gap-2">
+                          <a href="/curious/edit/{{this.id}}">
+                            <button type="button" class="btn" id="btn-form"><i
+                                class="fa-solid fa-pen-to-square"></i><span class="ms-2">Editar</span></button></a>
+                        </div>
+                        <div class="col-6 d-grid gap-2">
+                          <button type="submit" class="btn" id="btn-form"><i class="fa-solid fa-trash"></i><span
+                              class="ms-2">Excluir</span></button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+
+  function limitarCaracteres(className, limite) {
+    const elementos = document.getElementsByClassName(className);
+
+    for (const elemento of elementos) {
+      const textoCompleto = elemento.textContent;
+      if (textoCompleto.length > limite) {
+        const textoLimitado = textoCompleto.slice(0, limite) + "...";
+        elemento.textContent = textoLimitado;
+      }
+    }
+  }
+
+  // Chamando a função para limitar o texto do elemento com a classe "card-text" a 50 caracteres
+  limitarCaracteres("card-text", 95);
+
+
+
+</script>

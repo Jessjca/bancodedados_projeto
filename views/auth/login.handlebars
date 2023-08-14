@@ -1,15 +1,28 @@
-<div class="auth-container">
-    <h2>Entrar</h2>
-    <form action="/login" method="POST">
-        <div class="form-control">
-            <label for="email">E-mail:</label>
-            <input type="email" name="email" placeholder="Digite o seu e-mail">
+<div class="container-fluid create-container">
+    <div class="row" id="home-background">
+        <div class="container create d-flex justify-content-center">
+
+            <div class="d-block" style="width: 50vh">
+                <div class="row">
+                    <div class="col-12 p-5 d-flex justify-content-center">
+                    </div>
+                </div>
+                <h2>Entrar</h2>
+                <form action="/login" method="POST">
+                    <div class="">
+                        <label for="email">E-mail:</label>
+                        <input type="email" name="email" placeholder="Digite o seu e-mail" class="form-control"
+                            id="input">
+                    </div>
+                    <div class="">
+                        <label for="password">Senha:</label>
+                        <input type="password" name="password" placeholder="Digite a sua senha" class="form-control"
+                            id="input">
+                    </div>
+                    <input id="btn-default" class="btn mt-3 btn-primary create-zoom-div" type="submit" value="Entrar">
+                    <p>Não tem conta? <a href="/register" class="pink-link">Clique aqui</a></p>
+                </form>
+            </div>
         </div>
-            <div class="form-control">
-            <label for="password">Senha:</label>
-            <input type="password" name="password" placeholder="Digite a sua senha">
-        </div>
-        <input type="submit" value="Entrar">
-        <p>Não tem conta? <a href="/register">Clique aqui</a></p>
-    </form>
+    </div>
 </div>

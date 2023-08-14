@@ -1,0 +1,66 @@
+<div class="container-fluid home-container">
+  <div class="row" id="post-background">
+    <div class="row d-flex justify-content-center">
+    </div>
+  </div>
+  <div class="row mt-5" id="post-background2">
+    <div class="row d-flex justify-content-center">
+      <div class="col-8 p-5">
+        <div class="text-center mb-3">
+          <h2>{{curious.title}}</h2>
+          <i class="fa-solid fa-bell-concierge"></i>
+          <span class="ms-2">{{curious.servings}}
+            <span id="servingsText"></span>
+          </span>
+          <i class="fa-solid fa-clock ms-5"></i>
+          <span class="ms-2">{{curious.time_taken}}</span>
+        </div>
+
+        <div class="pb-3" style="border-top: 1px solid #8C4558; border-bottom: 1px solid #8C4558;">
+          <pre class="mt-3">{{curious.content}}</pre>
+          <div class="row" style="border-top: 1px solid #8C4558;">
+            <div class="col d-flex justify-content-center m-4">
+              <a href="/">
+                <img class="img-fluid" src="/img/final.gif" alt="logo" width="200px">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 mt-5 d-flex justify-content-center">
+        <p id="youtubeLink" style="display: none;">{{curious.link}}</p>
+        <iframe id="youtubeFrame" width="860" height="515" src="" title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+  var youtubeLink = document.getElementById("youtubeLink");
+
+  var textoAtual = youtubeLink.textContent;
+
+  var novoTexto = textoAtual.replace("https://www.youtube.com/watch?v=", "");
+
+  // Atualiza o conteúdo do <p> com o novo texto
+  youtubeLink.textContent = novoTexto;
+
+  var novoLink = "https://www.youtube.com/embed/" + novoTexto;
+
+  var youtubeFrame = document.getElementById("youtubeFrame");
+
+  // Atualiza o atributo 'src' do <iframe> com o novo link do YouTube
+  youtubeFrame.src = novoLink;
+
+  var servings = {{ curious.servings }};
+  var servingsText = document.getElementById("servingsText");
+
+  if (servings === 1) {
+    servingsText.textContent = " porção";
+  } else {
+    servingsText.textContent = " porções";
+  }
+</script>

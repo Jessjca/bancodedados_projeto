@@ -1,0 +1,55 @@
+<div class="container-fluid create-container">
+  <div class="row" id="home-background">
+    <div class="d-flex justify-content-center">
+      <div class="d-block" style="width: 60vh">
+        <div class="row post-header">
+          <div class="col-12 p-5 d-flex justify-content-center">
+          </div>
+          <div class="col-12">
+            <a href="/curious/dashboard"><p><i class="fa-solid fa-arrow-left"></i><span class="ms-2">Voltar</span></p></a>
+          </div>
+          <div class="col-12">
+            <h2>Criar receita</h2>
+          </div>
+        </div>
+        <form action="/curious/add" method="POST" enctype="multipart/form-data">
+          <div class="row">
+            <div class="col-12">
+              <label for="title" class="mt-3 bold">Título:</label>
+              <input type="text" name="title" class="form-control" id="input-form" placeholder="Digite o título" required/>
+            </div>
+            <div class="col-12">
+              <label for="title" class="mt-3 bold">Link:</label>
+              <input type="text" name="link" class="form-control" id="input-form" placeholder="Digite o link" required/>
+            </div>
+            <div class="col-12">
+              <label for="description" class="mt-3 bold">Descrição:</label>
+              <textarea id="input-form" name="description" class="form-control" placeholder="Digite a descrição"
+                required></textarea>
+            </div>
+            <div class="col-12">
+              <label for="content" class="mt-3 bold">Receita:</label>
+              <textarea id="input-form" name="content" class="form-control" placeholder="Digite o conteúdo" required
+                style="height: 200px;"></textarea>
+            </div>
+            <div class="col">
+              <label for="servings" class="mt-3 bold">Quantidade de Porções:</label>
+              <input type="number" class="form-control" id="input-form" name="servings" required />
+            </div>
+            <div class="col">
+              <label for="time_taken" class="mt-3 bold">Tempo Gasto:</label>
+              <input type="text" class="form-control" id="input-form" name="time_taken" required />
+            </div>
+            <div class="col-12">
+              <label for="title" class="mt-3 bold">Imagem:</label>
+              <input type="file" name="image" class="form-control" id="input-form" required />
+            </div>
+            <div class="col-12 d-grid gap-2 mt-3">
+              <button type="submit" class="btn" id="btn-form">Criar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
