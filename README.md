@@ -2,6 +2,8 @@
 
 O "Curious" é um aplicativo web interativo que oferece uma plataforma para compartilhar e explorar receitas de panquecas. O projeto é construído com tecnologias web, incluindo HTML, CSS, JavaScript, Node.js e MySQL.
 
+Vídeo do projeto: [Youtube](https://youtu.be/j07VDZcFMLk)
+
 ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
