@@ -70,6 +70,8 @@ CREATE TABLE IF NOT EXISTS Curious (
 );
 ```
 
+Para povoar o banco de dados, há um arquivo `povoamento` na pasta `scriptsSQL` com todos os dados de dois usuários e 4 receitas.
+
 Após isto, apenas execute o comando `npm start` na raiz do projeto para inicializar o servidor.
 
 
@@ -134,6 +136,7 @@ db/: Contém a conexão com o banco de dados MySql.
 helpers/: Contém os recursos para execução do middleware.
 public/: Contém os recursos estáticos como CSS, imagens e scripts JavaScript.
 routes/: Define as rotas da aplicação.
+scriptsSQL/: Define o povoamento do banco de dados.
 views/: Armazena os templates HTML utilizados nas visualizações.
 index.js: Arquivo principal que inicia o servidor.
 ```
