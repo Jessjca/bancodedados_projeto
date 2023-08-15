@@ -1,0 +1,25 @@
+/* Para criar o banco de dados utilize os scripts abaixo */
+
+CREATE DATABASE curious;
+
+USE curious;
+CREATE TABLE IF NOT EXISTS Users (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  password VARCHAR(255) NOT NULL
+);
+
+USE curious;
+CREATE TABLE IF NOT EXISTS Curious (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  link VARCHAR(255) NOT NULL,
+  image VARCHAR(255) NOT NULL,
+  description VARCHAR(255) NOT NULL,
+  servings INT NOT NULL,
+  time_taken VARCHAR(255) NOT NULL,
+  content TEXT NOT NULL,
+  UserId INT UNSIGNED NOT NULL,
+  FOREIGN KEY (UserId) REFERENCES Users(id)
+);
