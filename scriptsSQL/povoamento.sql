@@ -14,7 +14,7 @@ VALUES
 USE curious;
 INSERT INTO `curious` (`id`, `title`, `link`, `image`, `description`, `servings`, `time_taken`, `content`, `UserId` )
 VALUES
-  ('1', 'Panqueca de Chocolate', 'https://www.youtube.com/watch?v=QhFRRSDVluM', '8206381bbdf725f7bff60d9cf8b58437.jpg', 'Desperte os sentidos e inicie o dia com uma indulgência irresistível: panquecas de chocolate. Esta receita é um convite para os amantes do chocolate e da comfort food, trazendo uma combinação perfeita entre o rico sabor do cacau e a textura macia das panq', '1', '15 minutos', 
+  ('1', 'Panqueca de Chocolate', 'https://www.youtube.com/watch?v=QhFRRSDVluM', '4d49b27a541cfaa37d1b2f77f0692062.jpeg', 'Desperte os sentidos e inicie o dia com uma indulgência irresistível: panquecas de chocolate. Esta receita é um convite para os amantes do chocolate e da comfort food, trazendo uma combinação perfeita entre o rico sabor do cacau e a textura macia das panq', '1', '15 minutos', 
   'Ingredientes:
  
  1 xícara de farinha de trigo
@@ -48,7 +48,7 @@ VALUES
  Sirva as panquecas de chocolate quentes, acompanhadas de xarope de bordo, frutas frescas, chantilly ou outros acompanhamentos de sua escolha.
  
  Aproveite suas deliciosas panquecas de chocolate!', '1'),
- ('2', 'Panquecado do Cuphead', 'https://www.youtube.com/watch?v=_QgQsp9Lpbo', 'dfd047de3be017dacc8f5b08d04941f8.jpeg', 'Esta receita é um convite para os amantes do chocolate e de Cuphead, trazendo uma combinação perfeita entre o rico sabor do cacau e a textura macia das panquecas.', '5', '45 minutos', 
+ ('2', 'Panquecado do Cuphead', 'https://www.youtube.com/watch?v=_QgQsp9Lpbo', '8cb95cacf3712b7b72d3772abf3100bd.jpeg', 'Esta receita é um convite para os amantes do chocolate e de Cuphead, trazendo uma combinação perfeita entre o rico sabor do cacau e a textura macia das panquecas.', '5', '45 minutos', 
   'Ingredientes:
  
  1 xícara de farinha de trigo
@@ -82,7 +82,7 @@ VALUES
  Sirva as panquecas de chocolate quentes, acompanhadas de xarope de bordo, frutas frescas, chantilly ou outros acompanhamentos de sua escolha.
  
  Aproveite suas deliciosas panquecas de chocolate!', '1'),
- ('3', 'Panqueca de Morango', 'https://www.youtube.com/watch?v=w0bAE9RSvag', 'a21d8231e3a33978df9da013960f5107.jpg', 'Com uma preparação simples e ingredientes de fácil acesso, você pode criar um café da manhã ou lanche excepcional que fará seus sabores favoritos dançarem no paladar.', '3', '20 minutos', 
+ ('3', 'Panqueca de Morango', 'https://www.youtube.com/watch?v=w0bAE9RSvag', '5685b10466613a7f7e5d2f846820157b.jpg', 'Com uma preparação simples e ingredientes de fácil acesso, você pode criar um café da manhã ou lanche excepcional que fará seus sabores favoritos dançarem no paladar.', '3', '20 minutos', 
   'Ingredientes:
  
  1 xícara de farinha de trigo
@@ -116,7 +116,7 @@ VALUES
  Sirva as panquecas de chocolate quentes, acompanhadas de xarope de bordo, frutas frescas, chantilly ou outros acompanhamentos de sua escolha.
  
  Aproveite suas deliciosas panquecas de chocolate!', '1'),
- ('4', 'Panqueca de Flamengo', 'https://www.youtube.com/watch?v=Sx86-18V3m8', 'd1c3e95a1a0093aec99fa7067bb68034.png', 'Desfrute de uma refeição inspirada na paixão pelo futebol e no sabor autêntico brasileiro com as Panquecas à Moda do Flamengo. Essa receita une os sabores tradicionais das panquecas com um toque de criatividade que homenageia o time mais querido do Rio de', '8', '44 minutos', 
+ ('4', 'Panqueca de Flamengo', 'https://www.youtube.com/watch?v=Sx86-18V3m8', 'dc263a41bf010d90134eb687353185bb.png', 'Desfrute de uma refeição inspirada na paixão pelo futebol e no sabor autêntico brasileiro com as Panquecas à Moda do Flamengo. Essa receita une os sabores tradicionais das panquecas com um toque de criatividade que homenageia o time mais querido do Rio de', '8', '44 minutos', 
   'Ingredientes:
  
  1 xícara de farinha de trigo
