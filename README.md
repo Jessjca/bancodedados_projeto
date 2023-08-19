@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS Curious (
 );
 ```
 
-Para povoar o banco de dados, há um arquivo `povoamento` na pasta `scriptsSQL` com todos os dados de dois usuários e 4 receitas. Lembrando também que na pasta `public/img/receitas` estão as imagens das receitas criadas no arquivo `povoamento.sql`, caso você não queira usar as receitas de `povoamento.sql` pode excluir *apenas* as imagens dessa pasta, não exclua a pasta em si senão o código não vai encontrar o diretório para salvar as imagens das receitas criadas.
+Para povoar o banco de dados, há um arquivo `povoamento` na pasta `scriptsSQL` com todos os dados de dois usuários e 4 receitas. Lembrando também que na pasta `public/img/receitas` estão as imagens das receitas criadas no arquivo `povoamento.sql`, caso você não queira usar as receitas de `povoamento.sql` pode excluir *apenas* as imagens dessa pasta, não exclua a pasta em si senão o código não vai encontrar o diretório para salvar as imagens das futuras receitas criadas.
 
 Após isto, apenas execute o comando `npm start` na raiz do projeto para inicializar o servidor.
 
